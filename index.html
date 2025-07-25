@@ -1,24 +1,85 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <title>Ngo Quoc An - Portfolio</title>
-  <style>
-    body { font-family: sans-serif; max-width: 800px; margin: auto; padding: 2rem; }
-    .project { margin-bottom: 2rem; }
-  </style>
-</head>
-<body>
-  <h1>Ngo Quoc An - Portfolio</h1>
-  <p>Email: your_email@example.com | IELTS: 6.0</p>
+  <head>
+    <title>Wearable Pulse & SpO2 Monitor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-  <div class="project">
-    <h2>Wearable Pulse & Oxygen Monitor</h2>
-    <p>PCB project using Arduino, MAX30100, OLED. Custom PCB designed in KiCad.</p>
-    <img src="pcb_front.png" width="300">
-    <img src="pcb_back.png" width="300">
-  </div>
+      <!-- Header -->
+      <header id="header">
+        <a href="index.html" class="logo">Ngo Quoc An</a>
+      </header>
 
-  <!-- Thêm các project khác tại đây -->
-</body>
+      <!-- Main -->
+      <div id="main" class="alt">
+        <section id="one">
+          <div class="inner">
+            <header class="major">
+              <h1>Wearable Pulse & SpO2 Monitor</h1>
+            </header>
+            <span class="image main"><img src="images/pcb_front.png" alt="PCB Front" /></span>
+
+            <p><strong>Description:</strong><br>
+            A wearable health monitoring device that measures heart rate and blood oxygen (SpO2) levels using the MAX30100 sensor, and displays the data in real-time on an OLED screen. Entire system is built on a custom PCB using Arduino Nano and designed in KiCad.</p>
+
+            <p><strong>Technologies Used:</strong></p>
+            <ul>
+              <li>Arduino Nano (ATmega328P)</li>
+              <li>MAX30100 Pulse Oximeter Sensor (I2C)</li>
+              <li>OLED 0.96" SSD1306 Display (I2C)</li>
+              <li>KiCad – 1-layer PCB design</li>
+              <li>Arduino IDE – C++</li>
+              <li>4 Push Buttons, 2 LEDs, Power via USB</li>
+            </ul>
+
+            <p><strong>Key Contributions:</strong></p>
+            <ul>
+              <li>Designed complete schematic and PCB layout</li>
+              <li>Wrote embedded firmware for data collection and OLED display</li>
+              <li>Debugged I2C communication and sensor signal stability</li>
+              <li>Integrated user interface with buttons and LED indicators</li>
+            </ul>
+
+            <p><strong>Results:</strong></p>
+            <ul>
+              <li>Stable SpO2 and pulse rate readings displayed in real time</li>
+              <li>Compact, fully soldered PCB – wearable-ready</li>
+              <li>Functional demo and documentation ready for testing and presentation</li>
+            </ul>
+
+            <p><strong>Images:</strong></p>
+            <img src="images/pcb_back.png" alt="PCB Back" style="max-width:100%; height:auto; margin-bottom:1rem;">
+            <img src="images/schematic.png" alt="Schematic" style="max-width:100%; height:auto;">
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="copyright">
+            <li>&copy; Ngo Quoc An</li>
+            <li>Design template: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+  </body>
 </html>
