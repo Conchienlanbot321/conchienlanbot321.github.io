@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html style="scroll-behavior: smooth;">
+<head>
+  <title>Hệ thống giám sát môi trường IoT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .highlight-box {
+      background-color: #f7f7f7;
+      padding: 1.5rem;
+      border-left: 6px solid #00bfa5;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .video-wrapper iframe,
+    .video-wrapper video {
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      max-width: 100%;
+      height: auto;
+    }
+    .image.fit img {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      max-width: 100%;
+      height: auto;
+    }
+    .video-wrapper {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #00bfa5;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      z-index: 1000;
+    }
+    @media (max-width: 768px) {
+      .highlight-box {
+        padding: 1rem;
+      }
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 12px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <header class="major fade-in">
+          <h2><i class="fas fa-microchip"></i> Hệ thống giám sát môi trường IoT</h2>
+          <p>Ứng dụng ESP32, cảm biến khí và nền tảng Raspberry Pi</p>
+        </header>
+
+        <div class="highlight-box fade-in">
+          <h3><i class="fas fa-bullseye"></i> Mục tiêu đề tài</h3>
+          <p>Thiết kế và triển khai một hệ thống giám sát môi trường thông minh có khả năng thu thập dữ liệu từ nhiều loại cảm biến (nhiệt độ, độ ẩm, khí độc, mức nước), hiển thị tức thời trên LCD và gửi dữ liệu về máy chủ để lưu trữ và truy cập từ xa qua giao diện web.</p>
+        </div>
+
+        <h3><i class="fas fa-cogs"></i> Thành phần hệ thống</h3>
+        <ul>
+          <li><strong>Thiết bị đầu cuối:</strong> ESP32 với cảm biến DHT11, MQ135, cảm biến mức nước</li>
+          <li><strong>Thiết bị hiển thị:</strong> LCD1602 I2C</li>
+          <li><strong>Máy chủ:</strong> Raspberry Pi dùng SQLite & Mongoose</li>
+          <li><strong>Giao diện người dùng:</strong> HTML, CSS, JS, AJAX</li>
+        </ul>
+
+        <h3><i class="fas fa-network-wired"></i> Cơ chế hoạt động</h3>
+        <span class="image fit fade-in"><img src="images/system_architecture.png" alt="real"></span>
+        <p class="fade-in">Hệ thống phối hợp phần cứng & phần mềm như sau:</p>
+        <ol class="fade-in">
+          <li><strong>ESP32</strong> thu thập dữ liệu cảm biến → gửi HTTP POST</li>
+          <li><strong>Raspberry Pi</strong> nhận dữ liệu qua Mongoose → lưu vào SQLite</li>
+          <li><strong>LCD1602</strong> hiển thị dữ liệu mới nhất tại chỗ</li>
+          <li><strong>Web</strong> truy cập từ xa, dùng AJAX cập nhật dữ liệu theo thời gian thực</li>
+          <li><strong>Điều khiển từ xa:</strong> gửi truy vấn /control để bật/tắt thiết bị</li>
+        </ol>
+
+        <h3><i class="fas fa-chart-line"></i> Kết quả đạt được</h3>
+        <ul>
+          <li>Truyền dữ liệu ổn định, phản hồi < 1 giây</li>
+          <li>Giao diện thân thiện, dễ thao tác</li>
+          <li>Có thể mở rộng thêm nhiều loại cảm biến</li>
+        </ul>
+
+        <h3><i class="fas fa-images"></i> Hình ảnh minh hoạ</h3>
+        <p><strong>Mạch thực tế:</strong></p>
+        <span class="image fit fade-in"><img src="images/real.png" alt="real"></span>
+        <p><strong>Giao diện web realtime:</strong></p>
+        <span class="image fit fade-in"><img src="images/web_ui_realtime.png" alt="web"></span>
+
+        <h3><i class="fas fa-video"></i> Video kết quả</h3>
+        <div class="video-wrapper fade-in">
+          <video controls width="75%" style="display: block; margin: 0 auto;">
+            <source src="videos/demo2.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </div>
+
+
+        <p style="font-size: 0.9rem; color: gray; text-align: right;">
+          Cập nhật lần cuối: <script>document.write(new Date().toLocaleDateString())</script>
+        </p>
+        <p><strong>Link GitHub:</strong> <a href="https://github.com/conchienlanbot321/conchienlanbot321.github.io" target="_blank">Xem tại đây</a></p>
+      </div>
+    </section>
+  </div>
+  <a href="#header" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
+</body>
+</html>
