@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>PIM Architecture Design – 90nm CMOS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .image.fit img { border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.2); margin-bottom:1.5rem; }
+    .highlight { background:#f2f2f2; padding:1.5rem; border-left:5px solid #00bfa5; margin-bottom:2rem; border-radius:8px; }
+    iframe { border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.2); }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>PIM Architecture Design using 90nm CMOS</h1>
+            <p>Đề tài đạt giải tại Cuộc thi Thiết kế vi mạch cho đô thị thông minh lần 1</p>
+          </header>
+
+          <div class="highlight">
+            <h3>Mục tiêu dự án</h3>
+            <p>Thiết kế kiến trúc PIM (Processing‑In‑Memory) sử dụng công nghệ CMOS 90 nm, có khả năng xử lý dữ liệu ngay trong bộ nhớ, giảm thiểu truy cập bus và tăng tốc độ xử lý dữ liệu cho ứng dụng đô thị thông minh.</p>
+          </div>
+
+          <h3>Thành phần thiết kế</h3>
+          <ul>
+            <li>Kiến trúc PIM với SRAM tích hợp logic xử lý</li>
+            <li>Công nghệ xử lý tín hiệu song song tại mỗi cell memory</li>
+            <li>Công cụ dùng: Cadence Virtuoso</li>
+          </ul>
+
+          <h3>Cơ chế hoạt động & Mô phỏng</h3>
+          <span class="image fit"><img src="images/pim_schematic.png" alt="PIM schematic"></span>
+          <ol>
+            <li>Thiết kế schematic cell PIM với SRAM + ALU nhỏ gọn</li>
+            <li>Layout full‑custom trên công nghệ 90 nm CMOS, tối ưu diện tích</li>
+            <li>Mô phỏng Cadance để kiểm tra phép tính và timing</li>
+            <li>Tích hợp nhiều cell thành block và thực hiện phép toán song song</li>
+          </ol>
+
+          <h3>🏆 Giải thưởng</h3>
+          <p>Dự án đạt <strong>Giải Khuyến Khích</strong> tại <strong>Cuộc thi Thiết kế Vi mạch cho Đô thị Thông minh lần I – năm 2024</strong>, do Trường Đại học Sư phạm Kỹ thuật TP.HCM và các đơn vị đồng tổ chức.</p>
+
+          <p>Đây là một trong những đề tài sáng tạo nổi bật về kiến trúc xử lý trong bộ nhớ (PIM), áp dụng thực tế cho các hệ thống đô thị thông minh và tiết kiệm năng lượng. Đội thi gồm 4 sinh viên đã vượt qua nhiều vòng đánh giá chuyên sâu và được vinh danh trong sự kiện <strong>“Gương điển hình tuổi trẻ HCMUTE 2025”</strong>.</p>
+
+          <div style="text-align: center; margin: 2rem 0;">
+            <img src="images/pim_award_team.jpg" alt="Đội thi PIM đạt giải khuyến khích" style="max-width: 50%; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+            <p style="font-size: 0.9rem; color: gray; margin-top: 0.5rem;">
+              Hình ảnh đội thi nhận giải Khuyến Khích tại chung kết cuộc thi thiết kế vi mạch đô thị thông minh – HCMUTE, 2024
+            </p>
+          </div>
+
+
+
+          <h3>Tài nguyên & liên kết</h3>
+          <ul>
+            <li><a href="https://cadence.com/">Cadence Virtuoso</a></li>
+            <li><a href="https://github.com/yourusername/pim-90nm-design">Repo GitHub dự án</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Ngo Quoc An</li>
+          <li>Theme: HTML5 UP – Massively</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+ 
+</body>
+</html>
