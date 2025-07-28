@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Portfolio – Ngo Quoc An</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .project-image {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+      overflow: visible;
+    }
+
+    .project-image img {
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+.img2,
+.img5 {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  overflow: visible;
+}
+
+.img2 img,
+.img5 img {
+  width: 120%;
+  max-width: none;
+  height: auto;
+  transform: scale(1.1);
+  transform-origin: center;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem; /* thêm khoảng cách dưới ảnh */
+}
+    /* Kích thước từng ảnh */
+    .img1 img { max-width: 60%; }
+    .img2 img { max-width: 60%; transform: scale(1.1); }
+    .img3 img { max-width: 75%; }
+    .img4 img { max-width: 85%; }
+    .img5 img { max-width: 35%; transform: scale(1.1); }
+    .img6 img { max-width: 85%; }
+
+    .inner {
+      overflow-x: visible; /* Cho phép ảnh tràn rộng */
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+      <div class="inner">
+<header class="major">
+  <h1>Project Portfolio</h1>
+  <p>A curated showcase of embedded systems, IoT, and VLSI design projects</p>
+  <p style="font-size: 1rem; font-style: italic; margin-top: 0.5rem;">Click on each title to view the full project details.</p>
+</header>
+
+        <section class="tiles">
+
+          <article class="style1">
+            <header>
+              <h2><a href="project1.html">1. Wearable Pulse & SpO2 Monitor</a></h2>
+            </header>
+            <span class="image project-image img1">
+              <img src="images/real1.jpg" alt="SpO2 Monitor" />
+            </span>
+            <div class="content">
+              <p>A wearable device using MAX30100 and Arduino Nano to monitor SpO2 and heart rate, with OLED display and PCB designed in KiCad.</p>
+            </div>
+          </article>
+
+          <article class="style2">
+            <header>
+              <h2><a href="project2.html">2. IoT Environmental Monitoring System</a></h2>
+            </header>
+            <span class="image project-image img2">
+              <img src="images/real.png" alt="IoT Monitoring" />
+            </span>
+            <div class="content">
+              <p>ESP32-based monitoring system with sensors (DHT11, MQ135, water level), sends data to Raspberry Pi and displays on LCD1602 & web interface.</p>
+            </div>
+          </article>
+
+          <article class="style3">
+            <header>
+              <h2><a href="project3.html">3. Linux Kernel & QEMU ARM Simulation</a></h2>
+            </header>
+
+            </span>
+            <div class="content">
+              <p>This project focuses on building a Linux-based embedded system from scratch for an ARM architecture. It involves compiling the Linux kernel, creating a root filesystem using BusyBox, writing an init process, and booting the entire system in QEMU simulating a Cortex-A9 CPU. It also includes manual creation of SD card images, U-Boot replacement, and serial debugging through QEMU’s UART.</p>
+
+            </div>
+          </article>
+
+          <article class="style4">
+            <header>
+              <h2><a href="project4.html">4. Processing-in-Memory (PIM) Architecture</a></h2>
+            </header>
+            <span class="image project-image img4">
+              <img src="images/pim_schematic.png" alt="PIM Schematic" />
+            </span>
+            <div class="content">
+              <p>This VLSI design project was built based on the architecture of a Processing-in-Memory (PIM) cell, targeting the 90nm CMOS technology. The PIM cell integrates SRAM with logic elements for in-place computation, significantly reducing data movement and energy consumption. The project includes schematic design, full-custom layout, and Cadance simulations for functional and timing validation. It was recognized with an award at the National Smart City IC Design Contest.</p>
+
+            </div>
+          </article>
+
+          <article class="style5">
+            <header>
+              <h2><a href="project5.html">5. In-House Security Lock (PIC16F887)</a></h2>
+            </header>
+            <span class="image project-image img5">
+              <img src="images/securitylock_finalproduct.jpg" alt="Security Lock" />
+            </span>
+            <div class="content">
+              <p>Keypad + LCD-based security lock using PIC16F887 and CCS C compiler. Relay control and real-time feedback on LCD.</p>
+            </div>
+          </article>
+
+          <article class="style6">
+            <header>
+              <h2><a href="project6.html">6. Multicycle RISC CPU in Verilog</a></h2>
+            </header>
+
+            </span>
+            <div class="content">
+              <p>This CPU is implemented in Verilog HDL following a multicycle architecture, separating instruction fetch, decode, execute, memory access, and write-back stages. It features a control unit, register file, ALU, and memory modules, verified using behavioral testbenches and waveforms in Vivado. The design reflects a classical RISC datapath with FSM-based control logic, offering insights into pipelining alternatives and resource-efficient CPU architectures for SoC development.</p>
+            </div>
+          </article>
+
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Ngo Quoc An</li>
+          <li>Template: HTML5 UP – Massively</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
