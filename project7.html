@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Self-Balancing Two-Wheeled Robot</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .image.fit img {
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.5rem;
+    }
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>Self-Balancing Two-Wheeled Robot</h1>
+            <p>Arduino-based mechatronics project with real-time PID control</p>
+          </header>
+
+          <h3>Project Objective</h3>
+          <p>
+            This project aims to design and construct a self-balancing two-wheeled robot capable of maintaining upright stability using a closed-loop control system. It provides a hands-on exploration of control theory, PID tuning, sensor fusion, and real-time embedded implementation using Arduino and Matlab/Simulink.
+          </p>
+
+          <h3>Key Components</h3>
+          <ul>
+            <li><strong>Microcontroller:</strong> Arduino Uno (ATmega328P)</li>
+            <li><strong>Sensor:</strong> MPU6050 6-axis Gyro + Accelerometer (I2C)</li>
+            <li><strong>Motors:</strong> 2x DC motors with metal gearboxes</li>
+            <li><strong>Motor Driver:</strong> L298N H-Bridge</li>
+            <li><strong>Control Algorithm:</strong> PID implemented in C</li>
+            <li><strong>Simulation:</strong> Matlab Simulink model for dynamic behavior analysis</li>
+          </ul>
+
+          <h3>System Overview</h3>
+          <img src="images/project7_diagram (2).png" alt="PCB Back" style="max-width:40%; height:auto; display:block; margin: 1rem auto;">
+          <ol>
+            <li>MPU6050 captures the robot’s pitch angle using sensor fusion (Kalman/Complementary Filter).</li>
+            <li>Arduino runs the PID algorithm to adjust motor power based on the angle error.</li>
+            <li>L298N driver amplifies PWM signals to control the motors.</li>
+            <li>Real-world behavior is validated against Simulink simulation models.</li>
+          </ol>
+
+          <h3>Photos</h3>
+          <ul>
+            <li><strong>Simulation in Simulink:</strong></li>
+            <img src="images/project7_simulink.png" alt="PCB Back" style="max-width:80%; height:auto; display:block; margin: 1rem auto;">
+            <img src="images/steadystate.png" alt="PCB Back" style="max-width:60%; height:auto; display:block; margin: 1rem auto;">
+        <ol>
+            <li>Settling Time is relatively fast: The system reaches steady state (within a certain tolerance, for example 2% or 5% of the set value) in about 0.2 to 0.25 seconds. This is a fairly fast settling time, indicating that the controller responds effectively to the input change..</li>
+            <li>Oscillations: After overshooting, the response has decreasing oscillations around the steady state value (yellow line).</li>
+            <li>Fast response: The system responds quite quickly to the step signal. Immediately after the input change, the output quickly increases and approaches the set value.</li>
+          </ol>
+            <li><strong>Final Robot:</strong></li>
+            <img src="images/project7_final.jpg" alt="PCB Back" style="max-width:40%; height:auto; display:block; margin: 1rem auto;">
+          </ul>
+
+          <h3>Result & Performance</h3>
+          <ul>
+            <li>The robot maintains vertical stability in static and dynamic environments.</li>
+            <li>PID parameters tuned both via trial-error and Simulink simulations.</li>
+            <li>Demonstrates real-time embedded control with low-cost components.</li>
+            <li>Educational value in understanding multivariable control systems.</li>
+          </ul>
+
+          <h3>Demo Video</h3>
+          <div style="text-align: center;">
+            <iframe width="80%" height="400" src="https://www.youtube.com/embed/sioyK7qtErs" title="Self-Balancing Robot Demo" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <h3>Source Code</h3>
+          <p>
+            The Arduino sketch for MPU6050 data acquisition, angle estimation, and PID control is available on GitHub.
+            <br />
+            👉 <a href="https://github.com/yourusername/self-balancing-robot" target="_blank">GitHub Repository</a>
+          </p>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Ngo Quoc An</li>
+          <li>Template: HTML5 UP – Massively</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
