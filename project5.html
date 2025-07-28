@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>In-House Security Lock using PIC16F887</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    
+.image.fit img {
+  max-width: 85%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  margin-bottom: 1.5rem;
+}
+
+    .highlight {
+      background: #f2f2f2;
+      padding: 1.5rem;
+      border-left: 5px solid #00bfa5;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+    }
+    iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <!-- Main -->
+    <div id="main" class="alt">
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>Design and Construction of In-House Security Lock using PIC16F887</h1>
+            <p>Hệ thống khoá thông minh ứng dụng vi điều khiển PIC, keypad và relay điều khiển khoá cửa</p>
+          </header>
+
+          <div class="highlight">
+            <h3>Mục tiêu dự án</h3>
+            <p>Thiết kế và xây dựng hệ thống khoá an ninh trong nhà thông minh sử dụng vi điều khiển PIC16F887, keypad 4x4 để nhập mật khẩu, relay để điều khiển khoá điện tử, và LCD để hiển thị trạng thái.</p>
+          </div>
+
+        <h3>Thành phần hệ thống</h3>
+        <ul>
+        <li><strong>PIC16F887:</strong> xử lý logic, so sánh mật khẩu, điều khiển relay và hiển thị trên LCD</li>
+        <li><strong>Keypad 4x4:</strong> thiết bị nhập mật khẩu</li>
+        <li><strong>LCD 16x2:</strong> hiển thị trạng thái và thông báo</li>
+        <li><strong>Relay:</strong> khoá/mở khoá cửa tùy theo mật khẩu đúng/sai</li>
+        <li><strong>Ngôn ngữ lập trình:</strong> C, viết trên trình biên dịch <strong>CCS C Compiler</strong> (định dạng `.c`)</li>
+        </ul>
+
+
+          <h3>Cơ chế hoạt động</h3>
+          <ol>
+            <li>Người dùng nhập mật khẩu bằng keypad</li>
+            <li>PIC16F887 kiểm tra mật khẩu so với mật khẩu lưu trữ trong EEPROM</li>
+            <li>Nếu đúng: kích hoạt relay mở khoá → LCD hiển thị "ACCESS GRANTED"</li>
+            <li>Nếu sai: relay không kích hoạt → LCD hiển thị "ACCESS DENIED"</li>
+            <li>Có thể cài đặt mật khẩu mới bằng tổ hợp phím đặc biệt</li>
+          </ol>
+
+          <h3>Kết quả kiểm thử</h3>
+          <ul>
+            <li>Chức năng nhập mã và xác thực chạy ổn định</li>
+            <li>Relay phản hồi đúng, không bị trễ</li>
+            <li>LCD cập nhật kịp thời trạng thái</li>
+            <li>Keypad bị đảo chiều so với mô phỏng → đã chỉnh sửa sơ đồ chân</li>
+          </ul>
+
+          <h3>Ảnh mô phỏng & thực tế</h3>
+<ul>
+  <li>
+    <strong>Sơ đồ khối hệ thống:</strong><br>
+    <span class="image fit"><img src="images/securitylock_blockdiagram.png" alt="Sơ đồ khối hệ thống"></span>
+  </li>
+  <li>
+    <strong>Lưu đồ giải thuật điều khiển:</strong><br>
+    <span class="image fit"><img src="images/securitylock_flowchart.png" alt="Lưu đồ giải thuật điều khiển khoá"></span>
+  </li>
+  <li>
+    <strong>Ảnh mô phỏng trên Proteus:</strong><br>
+    <span class="image fit"><img src="images/securitylock_sim.png" alt="Mô phỏng trên Proteus"></span>
+  </li>
+  <li>
+    <strong>Mạch thi công thực tế:</strong><br>
+    <span class="image fit"><img src="images/securitylock_hardware.jpg" alt="Mạch thi công thực tế"></span> 
+  </li>
+  <li>
+    <strong>Sản phẩm hoàn chỉnh:</strong><br>
+    <span class="image fit"><img src="images/securitylock_finalproduct.jpg" alt="Sản phẩm hoàn chỉnh trên hộp thiết kế"></span>
+  </li>
+</ul>
+
+
+         <h3><i class="fas fa-video"></i> Video kết quả</h3>
+        <div class="video-wrapper fade-in">
+          <video controls width="75%" style="display: block; margin: 0 auto;">
+            <source src="videos/demo3.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </div>
+
+          <h3>Tài nguyên liên quan</h3>
+          <ul>
+            <li><a href="https://www.microchip.com/en-us/product/PIC16F887">Datasheet – PIC16F887</a></li>
+            <li><a href="https://proteus.design/">Proteus for simulation</a></li>
+            <li><a href="https://github.com/yourusername/security-lock-pic">GitHub repo dự án</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Ngo Quoc An</li>
+          <li>Theme: HTML5 UP – Massively</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+
+</body>
+</html>
