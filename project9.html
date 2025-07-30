@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Project 9 – Two-Stage CMOS OTA</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    .image-center {
+      display: block;
+      margin: 2rem auto;
+      max-width: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    }
+    iframe {
+      display: block;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+    <header id="header">
+      <a href="index.html" class="logo">Ngo Quoc An</a>
+    </header>
+
+    <div id="main" class="alt">
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>Two-Stage CMOS Operational Amplifier</h1>
+            <p>Design, Analysis, and Simulation using 180nm CMOS Technology</p>
+          </header>
+
+          <p>This project presents the full custom design of a two-stage CMOS operational amplifier (OTA) using 180nm technology. The work includes schematic creation, layout design, AC & transient simulations, gain and slew rate calculation, and physical verification.</p>
+
+          <h3>Block Diagram</h3>
+          <img src="images/project9_block_diagram.png" alt="Block Diagram" class="image-center">
+            <p>The design of the two-stage amplifier aims to meet specific performance metrics tailored for general-purpose applications in a 0.5μm CMOS process technology. These target specifications ensure the amplifier achieves high gain, adequate bandwidth, and stability while maintaining low power consumption, aligning with the requirements for analog integrated circuits in this technology node. The key target specifications are defined as follows:
+ Gain, gain bandwidth, settling time, slew rate, ICMR, CMRR, PSRR, output swing, output resistance, offset noise.
+</p>
+          <h3>Layout View</h3>
+          <img src="images/project9_layout.png" alt="Layout View" class="image-center">
+
+          <h3>Design Equations</h3>
+
+          <h4>First Stage Gain</h4>
+          <img src="images/firststage.png" alt="Layout View" class="image-center">
+          <p>$$A_{v1} = -g_{m2} \cdot (r_{o2} \parallel r_{o4})$$</p>
+          <p>$$r_{o2} = \frac{1}{\lambda_2 I_{D2}}, \quad r_{o4} = \frac{1}{\lambda_4 I_{D4}}, \quad I_{D2} = I_{D4}$$</p>
+          <p>$$r_{o2} \parallel r_{o4} = \frac{1}{I_{D2} (\lambda_2 + \lambda_4)} = \frac{2}{I_{D5} (\lambda_2 + \lambda_4)}$$</p>
+          <p>$$A_{v1} = -2g_{m2} \cdot \left( \frac{1}{I_{D5} (\lambda_2 + \lambda_4)} \right)$$</p>
+
+          <h4>Second Stage Gain</h4>
+          <img src="images/secondstage.png" alt="Layout View" class="image-center">
+          <p>$$A_{v2} = -g_{m6} \cdot (r_{o6} \parallel r_{o7})$$</p>
+          <p>$$r_{o6} = \frac{1}{\lambda_6 I_{D6}}, \quad r_{o7} = \frac{1}{\lambda_7 I_{D7}}, \quad I_{D6} = I_{D7}$$</p>
+          <p>$$r_{o6} \parallel r_{o7} = \frac{1}{I_{D6} (\lambda_6 + \lambda_7)}$$</p>
+          <p>$$A_{v2} = -g_{m6} \cdot \left( \frac{1}{I_{D6} (\lambda_6 + \lambda_7)} \right)$$</p>
+
+          <h4>Overall Voltage Gain</h4>
+          <p>$$A_v = A_{v1} \cdot A_{v2} = 2g_{m2} \cdot \left( \frac{1}{I_{D5} (\lambda_2 + \lambda_4)} \right) \cdot g_{m6} \cdot \left( \frac{1}{I_{D6} (\lambda_6 + \lambda_7)} \right)$$</p>
+
+          <h4>Slew Rate</h4>
+          <p>$$SR = \frac{I_5}{C_c}$$</p>
+<h3>W/L table</h3>
+          <img src="images/W_L.png" alt="Block Diagram" class="image-center">
+            
+          <h3>Waveform simulation DC</h3>
+          <img src="images/project9_waveform1.png" alt="Simulation Result" class="image-center">
+          <p>The image above shows us the gain Vout/Vin is equal to 1050 in the left (the transient responses) which is 60dB and the DC response shows us when Vin = 936mV we have Vout = 1.34V.</p>
+          <h3>AC response (bode plot) </h3>
+          <img src="images/project9_waveform2.png" alt="Simulation Result" class="image-center">
+          <p>This image shows the AC response (bode plot) the max gain is 60dB and -3dB bandwidth is equal to 7Khz.</p>
+                    <h3>Waveform Simulation</h3>
+          <img src="images/project9_waveform3.png" alt="Simulation Result" class="image-center">
+          <p>This image shows the transient response which already contain slew rate value the symbol “s: <slew rate value>” show use slew rate value, so this is a helpful function of this simulation. The average slew rate value is about 1.554kV/s which does not meet the requirement but is a large number.</p>
+                    <h3>Final result</h3>
+          <img src="images/project9_waveform4.png" alt="Simulation Result" class="image-center">
+          <p>We already go through the design process of designing a two-stage amplifier, the calculation process calculates gm, W/L ratio, current, etc. After that we go to the simulation part in cadence virtuoso to see how our calculation works in simulation tool. And for each calculation we gain different results, it can be good or bad, and we already fix these things that seem not working right when we simulate it, we go all the way to start and reoperate the calculation process again. Finally, we have the result is the two-stage amplifier working on SAT and it has the gain expected.</p>
+
+
+          <h3>Presentation Video</h3>
+          <iframe width="720" height="405" src="https://www.youtube.com/embed/Na3IvmzT21c" title="Project 9 CMOS OTA" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Ngo Quoc An</li>
+          <li>Template: HTML5 UP – Massively</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- MathJax -->
+  <script>
+    MathJax = {
+      tex: {inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$']]},
+      svg: {fontCache: 'global'}
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</body>
+</html>
