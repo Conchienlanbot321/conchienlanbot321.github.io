@@ -41,36 +41,36 @@
           <div class="inner">
             <header class="major">
               <h1>Linux Kernel Build & QEMU ARM Simulation</h1>
-              <p>Mô phỏng hệ điều hành Linux trên kiến trúc ARM sử dụng QEMU</p>
+              <p>Simulate a Linux operating system on ARM architecture using QEMU</p>
             </header>
 
             <div class="highlight">
-              <h3>Mục tiêu dự án</h3>
-              <p>Xây dựng và biên dịch Linux kernel cho kiến trúc ARM, sau đó chạy kernel đó trên QEMU mà không cần đến phần cứng thực. Mục tiêu là hiểu rõ quy trình build kernel, quản lý root filesystem và mô phỏng bo mạch ARM sử dụng QEMU.</p>
+              <h3>Project Objective</h3>
+              <p>Build and compile a Linux kernel for ARM architecture, then run it on QEMU without real hardware. The goal is to understand the kernel build process, root filesystem management, and simulate ARM board operation via QEMU.</p>
             </div>
 
-            <h3>Các công cụ sử dụng</h3>
+            <h3>Tools Used</h3>
             <ul>
-              <li>QEMU (Giả lập ARM)</li>
-              <li>Buildroot (tạo rootfs và cross-toolchain)</li>
+              <li>QEMU (ARM Emulator)</li>
+              <li>Buildroot (to create rootfs and cross-toolchain)</li>
               <li>Linux Kernel source (v6.x)</li>
-              <li>ARM Toolchain: `arm-linux-gnueabi-` hoặc `arm-none-eabi-`</li>
-              <li>Ubuntu 22.04 LTS (môi trường phát triển)</li>
+              <li>ARM Toolchain: `arm-linux-gnueabi-` or `arm-none-eabi-`</li>
+              <li>Ubuntu 22.04 LTS (development environment)</li>
             </ul>
 
-            <h3>Quy trình thực hiện</h3>
+            <h3>Implementation Steps</h3>
             <ol>
-              <li><strong>Clone kernel source:</strong><br>
+              <li><strong>Clone the kernel source:</strong><br>
                 <code>git clone https://github.com/torvalds/linux.git</code>
               </li>
-              <li><strong>Chọn architecture:</strong><br>
-                ARM – dùng <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig</code>
+              <li><strong>Select architecture:</strong><br>
+                ARM – use <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- menuconfig</code>
               </li>
-              <li><strong>Build kernel:</strong><br>
+              <li><strong>Build the kernel:</strong><br>
                 <code>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- zImage</code>
               </li>
-              <li><strong>Tạo rootfs bằng Buildroot hoặc Busybox</strong></li>
-              <li><strong>Khởi chạy QEMU:</strong><br>
+              <li><strong>Create rootfs using Buildroot or Busybox</strong></li>
+              <li><strong>Launch QEMU:</strong><br>
                 <code>
                 qemu-system-arm -M versatilepb -kernel zImage \
                 -initrd rootfs.cpio.gz -append "console=ttyAMA0" -nographic
@@ -78,25 +78,24 @@
               </li>
             </ol>
 
-<h3>Video mô phỏng</h3>
-<div style="text-align: center; margin: 2rem 0;">
-  <iframe width="75%" height="400"
-          src="https://www.youtube.com/embed/HyxCRNpx1xk"
-          title="Linux Kernel QEMU Simulation"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          style="border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
-  </iframe>
-</div>
+            <h3>Simulation Video</h3>
+            <div style="text-align: center; margin: 2rem 0;">
+              <iframe width="75%" height="400"
+                      src="https://www.youtube.com/embed/HyxCRNpx1xk"
+                      title="Linux Kernel QEMU Simulation"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      style="border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.2);">
+              </iframe>
+            </div>
 
-
-            <h3>Kết quả đạt được</h3>
+            <h3>Project Achievements</h3>
             <ul>
-              <li>Build thành công kernel Linux cho ARM</li>
-              <li>QEMU chạy được Linux kernel kèm rootfs</li>
-              <li>Hiển thị console và các tiến trình init</li>
-              <li>Không cần phần cứng, tiết kiệm chi phí</li>
+              <li>Successfully built Linux kernel for ARM</li>
+              <li>QEMU boots the Linux kernel with rootfs</li>
+              <li>Console and init process display</li>
+              <li>No hardware required, cost-effective simulation</li>
             </ul>
 
         </section>
