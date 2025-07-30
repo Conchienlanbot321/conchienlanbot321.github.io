@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    
 .image.fit img {
   max-width: 85%;
   height: auto;
@@ -18,7 +17,6 @@
   box-shadow: 0 0 12px rgba(0,0,0,0.2);
   margin-bottom: 1.5rem;
 }
-
     .highlight {
       background: #f2f2f2;
       padding: 1.5rem;
@@ -46,65 +44,63 @@
         <div class="inner">
           <header class="major">
             <h1>Design and Construction of In-House Security Lock using PIC16F887</h1>
-            <p>Hệ thống khoá thông minh ứng dụng vi điều khiển PIC, keypad và relay điều khiển khoá cửa</p>
+            <p>Smart locking system based on PIC microcontroller, keypad, and relay-controlled door lock</p>
           </header>
 
           <div class="highlight">
-            <h3>Mục tiêu dự án</h3>
-            <p>Thiết kế và xây dựng hệ thống khoá an ninh trong nhà thông minh sử dụng vi điều khiển PIC16F887, keypad 4x4 để nhập mật khẩu, relay để điều khiển khoá điện tử, và LCD để hiển thị trạng thái.</p>
+            <h3>Project Objective</h3>
+            <p>Design and build an in-house smart security lock system using PIC16F887 microcontroller, a 4x4 keypad for password input, a relay to control the electronic lock, and an LCD to display system status.</p>
           </div>
 
-        <h3>Thành phần hệ thống</h3>
-        <ul>
-        <li><strong>PIC16F887:</strong> xử lý logic, so sánh mật khẩu, điều khiển relay và hiển thị trên LCD</li>
-        <li><strong>Keypad 4x4:</strong> thiết bị nhập mật khẩu</li>
-        <li><strong>LCD 16x2:</strong> hiển thị trạng thái và thông báo</li>
-        <li><strong>Relay:</strong> khoá/mở khoá cửa tùy theo mật khẩu đúng/sai</li>
-        <li><strong>Ngôn ngữ lập trình:</strong> C, viết trên trình biên dịch <strong>CCS C Compiler</strong> (định dạng `.c`)</li>
-        </ul>
-
-
-          <h3>Cơ chế hoạt động</h3>
-          <ol>
-            <li>Người dùng nhập mật khẩu bằng keypad</li>
-            <li>PIC16F887 kiểm tra mật khẩu so với mật khẩu lưu trữ trong EEPROM</li>
-            <li>Nếu đúng: kích hoạt relay mở khoá → LCD hiển thị "ACCESS GRANTED"</li>
-            <li>Nếu sai: relay không kích hoạt → LCD hiển thị "ACCESS DENIED"</li>
-            <li>Có thể cài đặt mật khẩu mới bằng tổ hợp phím đặc biệt</li>
-          </ol>
-
-          <h3>Kết quả kiểm thử</h3>
+          <h3>System Components</h3>
           <ul>
-            <li>Chức năng nhập mã và xác thực chạy ổn định</li>
-            <li>Relay phản hồi đúng, không bị trễ</li>
-            <li>LCD cập nhật kịp thời trạng thái</li>
-            <li>Keypad bị đảo chiều so với mô phỏng → đã chỉnh sửa sơ đồ chân</li>
+            <li><strong>PIC16F887:</strong> handles logic, password comparison, relay control, and LCD output</li>
+            <li><strong>4x4 Keypad:</strong> used for entering password</li>
+            <li><strong>16x2 LCD:</strong> displays system status and messages</li>
+            <li><strong>Relay:</strong> locks/unlocks door based on password correctness</li>
+            <li><strong>Programming language:</strong> C, using <strong>CCS C Compiler</strong> (.c format)</li>
           </ul>
 
-          <h3>Ảnh mô phỏng & thực tế</h3>
-<ul>
-  <li>
-    <strong>Sơ đồ khối hệ thống:</strong><br>
-    <span class="image fit"><img src="images/securitylock_blockdiagram.png" alt="Sơ đồ khối hệ thống"></span>
-  </li>
-  <li>
-    <strong>Lưu đồ giải thuật điều khiển:</strong><br>
-    <span class="image fit"><img src="images/securitylock_flowchart.png" alt="Lưu đồ giải thuật điều khiển khoá"></span>
-  </li>
-  <li>
-    <strong>Ảnh mô phỏng trên Proteus:</strong><br>
-    <span class="image fit"><img src="images/securitylock_sim.png" alt="Mô phỏng trên Proteus"></span>
-  </li>
-  <li>
-    <strong>Mạch thi công thực tế:</strong><br>
-    <span class="image fit"><img src="images/securitylock_hardware.jpg" alt="Mạch thi công thực tế"></span> 
-  </li>
-  <li>
-    <strong>Sản phẩm hoàn chỉnh:</strong><br>
-    <span class="image fit"><img src="images/securitylock_finalproduct.jpg" alt="Sản phẩm hoàn chỉnh trên hộp thiết kế"></span>
-  </li>
-</ul>
+          <h3>Working Mechanism</h3>
+          <ol>
+            <li>User enters password using keypad</li>
+            <li>PIC16F887 checks the password against the one stored in EEPROM</li>
+            <li>If correct: relay is triggered to unlock → LCD displays "ACCESS GRANTED"</li>
+            <li>If incorrect: relay is not triggered → LCD displays "ACCESS DENIED"</li>
+            <li>Supports setting a new password via special key combination</li>
+          </ol>
 
+          <h3>Test Results</h3>
+          <ul>
+            <li>Password input and verification function works reliably</li>
+            <li>Relay responds accurately without delay</li>
+            <li>LCD updates system status in real-time</li>
+            <li>Keypad pin layout was reversed in simulation → fixed in actual wiring</li>
+          </ul>
+
+          <h3>Simulation & Real Images</h3>
+          <ul>
+            <li>
+              <strong>System Block Diagram:</strong><br>
+              <span class="image fit"><img src="images/securitylock_blockdiagram.png" alt="System block diagram"></span>
+            </li>
+            <li>
+              <strong>Control Flowchart:</strong><br>
+              <span class="image fit"><img src="images/securitylock_flowchart.png" alt="Control algorithm flowchart"></span>
+            </li>
+            <li>
+              <strong>Simulation in Proteus:</strong><br>
+              <span class="image fit"><img src="images/securitylock_sim.png" alt="Proteus simulation"></span>
+            </li>
+            <li>
+              <strong>Actual Hardware Circuit:</strong><br>
+              <span class="image fit"><img src="images/securitylock_hardware.jpg" alt="Actual hardware circuit"></span> 
+            </li>
+            <li>
+              <strong>Final Product:</strong><br>
+              <span class="image fit"><img src="images/securitylock_finalproduct.jpg" alt="Final product in case"></span>
+            </li>
+          </ul>
 
           <h3>Video:</h3>
           <div style="text-align:center; margin: 2rem 0;">
@@ -117,11 +113,11 @@
             </iframe>
           </div>
 
-          <h3>Tài nguyên liên quan</h3>
+          <h3>Related Resources</h3>
           <ul>
-            <li><a href="https://www.microchip.com/en-us/product/PIC16F887">Datasheet – PIC16F887</a></li>
+            <li><a href="https://www.microchip.com/en-us/product/PIC16F887">PIC16F887 Datasheet</a></li>
             <li><a href="https://proteus.design/">Proteus for simulation</a></li>
-            <li><a href="https://github.com/yourusername/security-lock-pic">GitHub repo dự án</a></li>
+            <li><a href="https://github.com/yourusername/security-lock-pic">GitHub Project Repository</a></li>
           </ul>
         </div>
       </section>
